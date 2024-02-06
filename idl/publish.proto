@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package publish;
+
+import "api.proto";
+import "common.proto";
+
+option go_package = "basic/publish";
+
+message DouyinPublishActionRequest {
+    string token = 1;
+    bytes data = 2;
+    string title = 3;
+}
+
+message DouyinPublishActionResponse {
+    int64 status_code = 1[(api.go_tag)='json:"status_code"'];
+    string status_msg = 2;
+}
+
+message DouyinPublishListRequest {
+    int64 user_id = 1;
+    string token = 2;
+}
+
+message DouyinPublishListResponse {
+    int64 status_code = 1[(api.go_tag)='json:"status_code"'];
+    string status_msg = 2;
+    repeated Video video_list = 3;
+}
+
+service PublishHandler {
+    rpc PublishAction(DouyinPublishActionRequest) returns(DouyinPublishActionResponse) {
+        option (api.post) = "/douyin/publish/action/";
+    }
+
+    rpc PublishList(DouyinPublishListRequest) returns(DouyinPublishListResponse) {
+        option (api.get) = "/douytin/publish/list/";
+    }
+}
