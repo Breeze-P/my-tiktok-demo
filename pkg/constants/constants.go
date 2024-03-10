@@ -18,16 +18,25 @@ const (
 	TestSign       = "测试账号！ offer"
 	TestAva        = "avatar/test1.jpg"
 	TestBackground = "background/test1.png"
+
+	UserServiceName   = "userservice"
+	VideosServiceName = "videoservice"
 )
 
 // connection information
-const (
-	MySQLDefaultDSN = "root:111111@tcp(127.0.0.1:3306)/douyin?charset=utf8&parseTime=True&loc=Local"
+// var means may change
+var (
+	MySQLDefaultDSN = "zzy:111111@tcp(127.0.0.1:9910)/douyin?charset=utf8&parseTime=True&loc=Local"
 	RedisAddr       = "localhost:6379"
 	RedisPassword   = ""
+
+	UserPort   = "8888"
+	VideosPort = "8889"
 
 	MinioEndPoint        = "localhost:9000"
 	MinioAccessKeyID     = "mytiktok"
 	MinioSecretAccessKey = "mytiktok111"
 	MiniouseSSL          = false
+
+	EtcdAddress = GetIp("EtcdIp") + ":2379"
 )

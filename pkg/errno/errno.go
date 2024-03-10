@@ -13,6 +13,7 @@ const (
 
 	UserAlreadyExistErrCode
 	UserIsNotExistErrCode
+	UserIsNotLoginErrCode
 
 	FollowRelationAlreadyExistErrCode
 	FollowRelationNotExistErrCode
@@ -33,6 +34,7 @@ const (
 	ServerErrMsg             = "Service is unable to start successfully"
 	ParamErrMsg              = "Wrong Parameter has been given"
 	UserIsNotExistErrMsg     = "user is not exist"
+	UserIsNotLoginErrMsg     = "user is not login"
 	PasswordIsNotVerifiedMsg = "username or password not verified"
 	FavoriteActionErrMsg     = "favorite add failed"
 
@@ -67,6 +69,7 @@ var (
 	UserAlreadyExistErr             = NewErrNo(UserAlreadyExistErrCode, "User already exists")
 	AuthorizationFailedErr          = NewErrNo(AuthorizationFailedErrCode, "Authorization failed")
 	UserIsNotExistErr               = NewErrNo(UserIsNotExistErrCode, UserIsNotExistErrMsg)
+	UserIsNotLoginErr               = NewErrNo(UserIsNotLoginErrCode, UserIsNotLoginErrMsg)
 	PasswordIsNotVerified           = NewErrNo(AuthorizationFailedErrCode, PasswordIsNotVerifiedMsg)
 	FollowRelationAlreadyExistErr   = NewErrNo(FollowRelationAlreadyExistErrCode, "Follow Relation already exist")
 	FollowRelationNotExistErr       = NewErrNo(FollowRelationNotExistErrCode, "Follow Relation does not exist")
